@@ -66,7 +66,7 @@ describe("convert numbers to english words", function() {
     result.should.eql(expectedResult);
   });
 
-  it("should convert tens from 20 to 90", function() {
+  it("should convert round numbers from 20 to 90", function() {
     var numbers = [20,30,40,50,60,70,80,90];
     var result = [];
 
@@ -76,6 +76,20 @@ describe("convert numbers to english words", function() {
     });
 
     var expectedResult = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
+    result.should.eql(expectedResult);
+  });
+
+  it("should convert numbers from 21 to 99", function() {
+    var numbers = [21,42,58, 99];
+    var result = [];
+
+    numbers.forEach(function(number) {
+      var converted = main.convert(number);
+      result.push(converted);
+    });
+
+    var expectedResult = ["twenty-one", "forty-two", "fifty-eight", "ninety-nine"];
 
     result.should.eql(expectedResult);
   });

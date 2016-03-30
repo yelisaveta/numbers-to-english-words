@@ -42,8 +42,12 @@ module.exports.convert = function(input) {
     word = getWordForSingleNumber(input);
   } else if (input >= 10 && input < 20) {
     word = getWordForTeenNumber(input);
-  } else if (isTensNumber(input)) {
-    word = getWordForTensNumber(input);
+  } else if (input >= 10 && input < 100) {
+    if (isTensNumber(input)) {
+      word = getWordForTensNumber(input);
+    } else {
+      word = getWordForDoubleNumber(input);
+    }
   }
 
   return word;
@@ -100,4 +104,12 @@ function getWordForTensNumber(number) {
   }
 
   return word;
+}
+
+function getWordForDoubleNumber(number) {
+  var firstNumber = Math.floor(number / 10);
+  var lastNumber = number - firstNumber*10;
+  var tensPart = firstNumber*10;
+
+  return [getWordForTensNumber(tensPart), getWordForSingleNumber(lastNumber)].join("-");
 }
