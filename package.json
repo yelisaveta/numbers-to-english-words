@@ -1,0 +1,19 @@
+{
+  "name": "numbers-to-english-words",
+  "version": "1.0.0",
+  "description": "Converts numbers from 1 to 1000 to english words",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yelisaveta/numbers-to-english-words.git"
+  },
+  "author": "Lisa Gagarina <yelisavetatpu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yelisaveta/numbers-to-english-words/issues"
+  },
+  "homepage": "https://github.com/yelisaveta/numbers-to-english-words"
+}
