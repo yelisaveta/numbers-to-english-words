@@ -4,7 +4,7 @@
   "description": "Converts numbers from 1 to 1000 to english words",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/yelisaveta/numbers-to-english-words/issues"
   },
-  "homepage": "https://github.com/yelisaveta/numbers-to-english-words"
+  "homepage": "https://github.com/yelisaveta/numbers-to-english-words",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "underscore": "^1.8.3"
+  }
 }
