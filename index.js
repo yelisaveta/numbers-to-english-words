@@ -40,19 +40,18 @@ module.exports.convert = function(input) {
 };
 
 function getErrorForInvalidInput(input) {
-  var errorMessage;
-
   if (!_.isNumber(input)) {
-    errorMessage = "Input value should be a number";
+    return "Input value should be a number";
   }
   if (input < 0) {
-    errorMessage = "Number should not be less than zero";
+    return "Number should not be less than zero";
   }
   if (input > 1000) {
-    errorMessage = "Number should not be more than 1000";
+    return "Number should not be more than 1000";
   }
-
-  return errorMessage;
+  if (input % 1 !== 0) {
+    return "Number should be integer";
+  }
 }
 
 function getWordForSingleNumber(number) {

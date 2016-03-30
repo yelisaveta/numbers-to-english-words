@@ -29,6 +29,12 @@ describe("convert numbers to english words", function() {
       }).to.throw("Number should not be more than 1000");
     });
 
+    it("should throw error if number is not integer", function() {
+      expect(function() {
+        main.convert(135.35);
+      }).to.throw("Number should be integer");
+    });
+
   });
   
   it("should convert numbers from 1 to 9", function() {
