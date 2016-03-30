@@ -65,6 +65,20 @@ describe("convert numbers to english words", function() {
 
     result.should.eql(expectedResult);
   });
+
+  it("should convert tens from 20 to 90", function() {
+    var numbers = [20,30,40,50,60,70,80,90];
+    var result = [];
+
+    numbers.forEach(function(number) {
+      var converted = main.convert(number);
+      result.push(converted);
+    });
+
+    var expectedResult = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
+    result.should.eql(expectedResult);
+  });
 });
 
 

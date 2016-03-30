@@ -21,6 +21,14 @@ var specialTeensMapper = {
   15: "fifteen",
   18: "eighteen"
 };
+var specialTensMapper = {
+  20: "twenty",
+  30: "thirty",
+  40: "forty",
+  50: "fifty",
+  80: "eighty"
+};
+
 
 module.exports.convert = function(input) {
   var word;
@@ -34,10 +42,13 @@ module.exports.convert = function(input) {
     word = getWordForSingleNumber(input);
   } else if (input >= 10 && input < 20) {
     word = getWordForTeenNumber(input);
+  } else if (isTensNumber(input)) {
+    word = getWordForTensNumber(input);
   }
 
   return word;
 };
+
 
 function getErrorForInvalidInput(input) {
   if (!_.isNumber(input)) {
@@ -66,6 +77,26 @@ function getWordForTeenNumber(number) {
   } else {
     var lastDigit = number - 10;
     word = singleNumbersMapper[lastDigit] + "teen";
+  }
+
+  return word;
+}
+
+function isTensNumber(number) {
+  var isNumberInRange = number >= 20 && number < 100;
+  var numberIsRound = (number / 10) % 1 === 0;
+
+  return isNumberInRange && numberIsRound;
+}
+
+function getWordForTensNumber(number) {
+  var word;
+
+  if (specialTensMapper[number]) {
+    word = specialTensMapper[number];
+  } else {
+    var firstDigit = number / 10;
+    word = singleNumbersMapper[firstDigit] + "ty";
   }
 
   return word;
