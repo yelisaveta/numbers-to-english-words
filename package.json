@@ -4,6 +4,8 @@
   "description": "Converts numbers from 1 to 1000 to english words",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm test",
+    "start": "node index",
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
@@ -19,6 +21,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5",
+    "prompt": "^1.0.0",
     "underscore": "^1.8.3"
   }
 }
