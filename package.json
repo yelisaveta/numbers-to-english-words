@@ -6,7 +6,8 @@
   "scripts": {
     "prestart": "npm test",
     "start": "node index",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "check-package-change": "./scripts/check_package_change.sh"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "./scripts/check_package_change"
+      "pre-commit": "npm run check-package-change"
     }
   }
 }
