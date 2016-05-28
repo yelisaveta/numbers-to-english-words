@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/yelisaveta/numbers-to-english-words/issues"
   },
-  "homepage": "https://github.com/yelisaveta/numbers-to-english-words",
+  "homepage": "https://github.com/yelisaveta/numbers-to-english-words-test",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5",
