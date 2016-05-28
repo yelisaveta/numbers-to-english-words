@@ -20,8 +20,14 @@
   "homepage": "https://github.com/yelisaveta/numbers-to-english-words",
   "devDependencies": {
     "chai": "^3.5.0",
+    "ghooks": "^1.2.1",
     "mocha": "^2.4.5",
     "prompt": "^1.0.0",
     "underscore": "^1.8.3"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "./scripts/check_package_change"
+    }
   }
 }
